@@ -4,13 +4,13 @@ a {
 }
 
 button {
-    
+    color: transparent;
 }
 
 h1 {
     text-align: center;
     text-decoration: none;
-    padding-top: 15%;
+    padding-top: 14%;
     font-size: 8rem;
     color: white;
 }
