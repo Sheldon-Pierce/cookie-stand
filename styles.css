@@ -5,6 +5,9 @@ a {
 
 button {
     color: transparent;
+    background-color: transparent;
+    border: none;
+    font-size: x-large;
 }
 
 h1 {
@@ -13,6 +16,15 @@ h1 {
     padding-top: 14%;
     font-size: 8rem;
     color: white;
+}
+
+#header-list {
+    text-align: right;
+    display: flex;
+}
+
+#sales-h2 {
+    text-align: center;
 }
 
 .back-video {
