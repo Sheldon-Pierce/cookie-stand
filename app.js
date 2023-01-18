@@ -9,7 +9,7 @@ function Cities (storeName, minCust, maxCust, avgCookie) {
   this.avgCookie = avgCookie;
 }
 
-let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 let hourLength = hours.length;
 let dailyTotal = 0;
 
@@ -71,11 +71,10 @@ function render(totalCities) {
   }
 }
 
-
-(totalCities.push(new Cities('Seattle', 23 ,65, 6.3)));
-(totalCities.push(new Cities('Tokyo', 3, 24, 1.2)));
-(totalCities.push(new Cities('Dubai', 11, 38, 3.7)));
-(totalCities.push(new Cities('Paris', 20, 38, 2.3)));
-(totalCities.push(new Cities('Lima', 2, 16, 4.6)));
+totalCities.push(new Cities('Seattle', 23 ,65, 6.3));
+totalCities.push(new Cities('Tokyo', 3, 24, 1.2));
+totalCities.push(new Cities('Dubai', 11, 38, 3.7));
+totalCities.push(new Cities('Paris', 20, 38, 2.3));
+totalCities.push(new Cities('Lima', 2, 16, 4.6));
 
 render(totalCities);
