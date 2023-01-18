@@ -8,23 +8,32 @@ button {
     background-color: transparent;
     border: none;
     font-size: x-large;
+    transition: all;
 }
 
 h1 {
     text-align: center;
-    text-decoration: none;
-    padding-top: 14%;
+    vertical-align: middle;
     font-size: 8rem;
     color: white;
+    height: max-content;
 }
 
+
 #header-list {
-    text-align: right;
+    position: static;
+    float: right;
     display: flex;
 }
 
-#sales-h2 {
+
+h2 {
+    position: static;
+    font-size: xx-large;
     text-align: center;
+    font-style: italic;
+    padding: 15px 0px;
+
 }
 
 .back-video {
@@ -46,4 +55,20 @@ h1 {
         width: auto;
         height: 100%;
     }
+}
+
+#locations {
+    width: 100%;
+    border: 2px solid;
+}
+
+td {
+    border: 1px solid;
+    padding: 15px;
+    font-style: bold;
+}
+
+ul {
+    text-align: right;
+    
 }
