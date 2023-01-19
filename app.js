@@ -12,6 +12,7 @@ function Cities (storeName, minCust, maxCust, avgCookie) {
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 let hourLength = hours.length;
 let dailyTotal = 0;
+let hourlyTotal = [];
 
 Cities.prototype.randomNumCust = function(){
   let difference = this.maxCust - this.minCust;
@@ -42,14 +43,6 @@ Cities.prototype.totalCookies = function(){
   }
   return dailyTotal;
 };
-$('#tableHead').append($('<tr>').addClass('head'));
-$('.head').append(('<th>'));
-for ( let i= 0; i < hourLength; i++){
-  $('.head').append((`<th>${hours[i]}`));
-}
-$('.head').append('<th>Total');
-
-$('#tableFoot').append($('<tr>').addClass('foot'));
 
 Cities.prototype.render = function() {
   this.customersPerHour();
@@ -66,12 +59,6 @@ Cities.prototype.render = function() {
   // Appends total cookie data last into table
   $(`.${this.storeName}`).append(`<td>${this.totalCookies()}`);
   //Creates Total Per Hour
-  for (let i = 0; i < hours.length; i++) {
-    for(let j = 0; j < totalCities; j++){
-      $('.foot').append(`<td>${this.purchasedCookiesPerHour()[i]}`)
-      ;
-    }
-  }
 };
 
 function render(totalCities) {
@@ -86,5 +73,58 @@ totalCities.push(new Cities('Dubai', 11, 38, 3.7));
 totalCities.push(new Cities('Paris', 20, 38, 2.3));
 totalCities.push(new Cities('Lima', 2, 16, 4.6));
 
-render(totalCities);
 
+
+render(totalCities);
+renderHeaderFooter(totalCities);
+
+// $('#tableHead').append($('<tr>').addClass('head'));
+// $('.head').append(('<th>'));
+// for ( let i= 0; i < hourLength; i++){
+//   $('.head').append((`<th>${hours[i]}`));
+// }
+// $('.head').append('<th>Total');
+
+// $('#tableFoot').append($('<tr>').addClass('foot'));
+
+function renderHeaderFooter(totalCities) {
+  $('#tableHead').append($('<tr>').addClass('head'));
+  $('.head').append(('<th>'));
+  for ( let i= 0; i < hourLength; i++){
+    $('.head').append((`<th>${hours[i]}`));
+  }
+  $('.head').append('<th>Total');
+  $('#tableFoot').append($('<tr>').addClass('foot'));
+  // all stores sales for a given hour
+
+  // loop within a loop!
+
+  // for each hour in hours
+  $('.foot').append(('<td>Per Hour Total'));
+  let grandTotal = 0;
+  for (let i = 0; i < hours.length; i++) {
+    let totalAtHour = 0;
+    // for each store in cities
+    for (let j = 0; j < totalCities.length; j++) {
+      totalAtHour += (totalCities[j].purchasedCookiesPerHour()[i]);
+      grandTotal += (totalCities[j].purchasedCookiesPerHour()[i]);
+    }
+    $('.foot').append(`<td>${totalAtHour}`);
+  }
+  $('.foot').append(`<td>${grandTotal}`);
+  // grand total
+  // let grandTotalEl = document.createElement('td');
+  // footerEl.appendChild(grandTotalEl);
+  // grandTotalEl.textContent = grandTotal;
+}
+
+
+
+// for (let index = 0; index < hourLength; index++) {
+//   hourlyTotal = [];
+//   for(let j = 0; j < totalCities.length; j++){
+//     hourlyTotal.push(totalCities[j].purchasedCookiesPerHour()[index]);
+//     console.log(hourlyTotal)
+//   }
+//   console.log(hourlyTotal);
+// }
