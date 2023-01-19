@@ -42,18 +42,20 @@ Cities.prototype.totalCookies = function(){
   }
   return dailyTotal;
 };
-
-$('#locations').append(`<td>${''}`);
-
+$('#tableHead').append($('<tr>').addClass('head'));
+$('.head').append(('<th>'));
 for ( let i= 0; i < hourLength; i++){
-  $('#locations').append((`<td>${hours[i]}`));
-};
-$('#locations').append('<td>Total');
+  $('.head').append((`<th>${hours[i]}`));
+}
+$('.head').append('<th>Total');
+
+$('#tableFoot').append($('<tr>').addClass('foot'));
 
 Cities.prototype.render = function() {
   this.customersPerHour();
   this.purchasedCookiesPerHour();
   this.totalCookies();
+  //D
   $('#locations').append($('<tr>').addClass(`${this.storeName}`));
   // Appends Store name to front of table
   $(`.${this.storeName}`).append(`<td>${this.storeName}`);
@@ -63,6 +65,13 @@ Cities.prototype.render = function() {
   }
   // Appends total cookie data last into table
   $(`.${this.storeName}`).append(`<td>${this.totalCookies()}`);
+  //Creates Total Per Hour
+  for (let i = 0; i < hours.length; i++) {
+    for(let j = 0; j < totalCities; j++){
+      $('.foot').append(`<td>${this.purchasedCookiesPerHour()[i]}`)
+      ;
+    }
+  }
 };
 
 function render(totalCities) {
@@ -78,3 +87,4 @@ totalCities.push(new Cities('Paris', 20, 38, 2.3));
 totalCities.push(new Cities('Lima', 2, 16, 4.6));
 
 render(totalCities);
+

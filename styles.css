@@ -4,35 +4,50 @@ a {
 }
 
 button {
-    color: transparent;
+    color: black;
     background-color: transparent;
     border: none;
     font-size: x-large;
     transition: all;
 }
 
-h1 {
-    text-align: center;
-    vertical-align: middle;
-    font-size: 8rem;
+button:hover {
+    transition-property: all;
     color: white;
-    height: max-content;
+    transition-duration: 350ms;
 }
 
-
-#header-list {
-    position: static;
-    float: right;
+h1 {
     display: flex;
+    justify-content: center;
+    padding-top: 20%;
+    color: salmon;
+    font-size: 7rem;
+
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    margin-left: 75px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+#header-list li {
+    padding-right: 75px;
 }
 
 
 h2 {
     position: static;
-    font-size: xx-large;
+    font-size: 3rem;
     text-align: center;
     font-style: italic;
-    padding: 15px 0px;
+    padding: 20px 0px;
 
 }
 
@@ -62,13 +77,23 @@ h2 {
     border: 2px solid;
 }
 
+table {
+    width: 100%;
+}
+
+thead {
+    border: 2px solid;
+}
+
 td {
     border: 1px solid;
     padding: 15px;
     font-style: bold;
 }
 
-ul {
-    text-align: right;
-    
+th {
+    border: 1px solid;
+    padding: 15px;
+    font-style: bold; 
 }
+
