@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="salesbody">
     <header>
         <nav>
             <ul id="header-list">
@@ -21,8 +21,27 @@
         </nav>
     </header>
     <main>
-        <h2 id="sales" class="sales">Sales Data</h2>
-        <table>
+        <h2 id="sales" class="sales">Sales Data</h2>       
+        <form id="reseter">
+            <fieldset>
+                <legend>Input New City Data</legend> 
+                <div id="formInfo">  
+                    <label for="cityName">City Name:</label>
+                    <input type="text" id="cityName" name="cityName" />
+                    <label for="minCustomers">Minimum Customers:</label>
+                    <input type="text" id="minCustomers" name="minCustomers" /> 
+                    <label for="maxCustomers">Maximum Customers:</label>
+                    <input type="text" id="maxCustomers" name="maxCustomers" />
+                    <label for="avgCookies">Average Cookies:</label>
+                    <input type="text" id="avgCookies" name="avgCookies" />
+                    </div>
+                <div id="formButton">
+                    <button id="clickButton" type="submit">Submit</button>
+                </div>
+            </fieldset>       
+        </form>
+        <br>
+        <table id="dataTable">
             <thead id="tableHead"></thead>
             <tbody id="locations"></tbody>
             <tfoot id="tableFoot"></tfoot>

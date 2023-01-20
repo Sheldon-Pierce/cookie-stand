@@ -75,8 +75,7 @@ h2 {
     width: 100%;
     border: 2px solid;
 }
-
-table {
+#dataTable {
     width: 100%;
 }
 
@@ -96,3 +95,54 @@ th {
     font-style: bold; 
 }
 
+fieldset {
+    background-color: salmon;
+    display: flex;
+    width: 500px;
+}
+
+legend {
+    background-color: bisque;
+    padding: 5px 30px;
+
+    
+}
+
+#formInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0px 10px 40px;
+}
+
+#formButton {
+    background-color: salmon;
+    align-self: center;
+    padding-left: 70px;
+    width: fit-content;
+}
+
+#formButton button {
+    display: flex;
+    align-items:;
+    width: fit-content;
+    font-size: 2rem;
+}
+
+form {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+input {
+    width: 200px;
+    padding-bottom: 5px;
+}
+
+label {
+    font-weight: 600;
+    padding: 3px 0px;
+}
+
+#salesbody {
+    background-color: #B5D5C5;
+}
