@@ -230,3 +230,12 @@ i {
     align-items: center;
     font-size: x-large;
 }
+
+footer {
+    padding-top: 22%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: salmon;
+    font-size: 2rem;
+}
